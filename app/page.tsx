@@ -1,65 +1,193 @@
-import Image from "next/image";
-
 export default function Home() {
+
+  const serviceImages = [
+    "./constuction1.jpeg",
+    "./constuction2.jpeg",
+    "./constuction3.jpeg"
+  ];
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <main className="min-h-screen">
+      {/* Hero Section */}
+      <section className="bg-gradient-to-r from-black to-gray-800 text-white py-32">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            
+            <div>
+              <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                Your Trusted Partner in Building Materials & Contracting Solutions in Qatar
+              </h1>
+
+              <p className="text-xl md:text-2xl mb-8 text-gray-300">
+                Delivering Quality, Reliability, and Professional Excellence in Every Project.
+              </p>
+
+              <div className="flex gap-4">
+                <button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-lg font-semibold transition">
+                  Request a Quote
+                </button>
+
+                <button className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white px-8 py-3 rounded-lg font-semibold transition">
+                  Contact Us
+                </button>
+              </div>
+            </div>
+
+            <div className="bg-gray-700 rounded-lg overflow-hidden h-96">
+              <img
+                src="./constuction1.jpeg"
+                alt="Hero Image"
+                className="w-full h-full object-cover"
+              />
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+
+      {/* Services Overview */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+
+          <h2 className="text-4xl font-bold text-center mb-12 text-black">
+            Our Services
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+            {serviceImages.map((img, index) => (
+              <div key={index} className="bg-gray-50 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
+
+                <div className="h-48 overflow-hidden">
+                  <img
+                    src={img}
+                    alt="Service Image"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-black mb-3">
+                    Service {index + 1}
+                  </h3>
+
+                  <p className="text-gray-700">
+                    Professional construction and contracting solutions tailored to your needs.
+                  </p>
+                </div>
+
+              </div>
+            ))}
+
+          </div>
+        </div>
+      </section>
+
+
+      {/* Why Choose Us */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+
+          <h2 className="text-4xl font-bold text-center mb-12 text-black">
+            Why Choose Us
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+
+            <div className="rounded-lg overflow-hidden h-80">
+              <img
+                src="./constuction3.jpeg"
+                alt="Why Choose Us"
+                className="w-full h-full object-cover"
+              />
+            </div>
+
+
+            <div className="space-y-6">
+
+              <div className="flex gap-4">
+                <div className="flex-shrink-0">
+                  <div className="w-12 h-12 rounded-full bg-orange-500 flex items-center justify-center text-white font-bold">
+                    ✓
+                  </div>
+                </div>
+
+                <div>
+                  <h3 className="text-xl font-semibold text-black mb-2">
+                    Quality Materials
+                  </h3>
+
+                  <p className="text-gray-700">
+                    We source only the highest quality materials from trusted manufacturers.
+                  </p>
+                </div>
+              </div>
+
+
+              <div className="flex gap-4">
+                <div className="flex-shrink-0">
+                  <div className="w-12 h-12 rounded-full bg-orange-500 flex items-center justify-center text-white font-bold">
+                    ✓
+                  </div>
+                </div>
+
+                <div>
+                  <h3 className="text-xl font-semibold text-black mb-2">
+                    Professional Team
+                  </h3>
+
+                  <p className="text-gray-700">
+                    Our experienced team delivers excellence in every project.
+                  </p>
+                </div>
+              </div>
+
+
+              <div className="flex gap-4">
+                <div className="flex-shrink-0">
+                  <div className="w-12 h-12 rounded-full bg-orange-500 flex items-center justify-center text-white font-bold">
+                    ✓
+                  </div>
+                </div>
+
+                <div>
+                  <h3 className="text-xl font-semibold text-black mb-2">
+                    On-Time Delivery
+                  </h3>
+
+                  <p className="text-gray-700">
+                    We ensure every project is completed on schedule and within budget.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+
+      {/* CTA Section */}
+      <section className="bg-orange-500 text-white py-16">
+        <div className="container mx-auto px-4 text-center">
+
+          <h2 className="text-4xl font-bold mb-6">
+            Ready to Build Your Future?
+          </h2>
+
+          <p className="text-xl mb-8">
+            Get in touch with our team today for a consultation.
           </p>
+
+          <button className="bg-black hover:bg-gray-800 text-white px-8 py-3 rounded-lg font-semibold transition">
+            Get Started Now
+          </button>
+
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </section>
+
+    </main>
   );
 }
